@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Sergey — UX/UI-дизайнер, фронтенд-разработчик</title>
+<style>
+  @page { size: A4; margin: 16mm 16mm 14mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Carlito, Calibri, "Liberation Sans", sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.45;
+    color: #1c1c1c;
+  }
+  a { color: #1c1c1c; text-decoration: none; }
+
+  .name { font-size: 21pt; font-weight: 700; letter-spacing: -.2pt; }
+  .role { font-size: 11pt; margin-top: 2pt; color: #444; }
+  .contacts { margin-top: 7pt; font-size: 9.4pt; color: #444; }
+  .contacts span { white-space: nowrap; }
+  .contacts i { font-style: normal; color: #999; padding: 0 5pt; }
+
+  hr { border: 0; border-top: .6pt solid #c9c9c9; margin: 11pt 0 0; }
+
+  h2 {
+    font-size: 8.6pt; font-weight: 700; text-transform: uppercase; letter-spacing: .8pt;
+    color: #7a7a7a; margin: 13pt 0 6pt;
+  }
+
+  p { margin: 0 0 4pt; }
+  .sub { color: #555; }
+
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+  .row b { font-size: 10.8pt; }
+  .when { font-size: 9.2pt; color: #777; white-space: nowrap; }
+
+  .item { margin-bottom: 9pt; }
+  .item:last-child { margin-bottom: 0; }
+  .item p { margin-top: 2pt; }
+  .role-line { font-size: 9.4pt; color: #777; margin-top: 3pt; }
+
+  ul { margin: 3pt 0 0; padding-left: 12pt; }
+  li { margin-bottom: 2.5pt; }
+
+  .foot { margin-top: 13pt; font-size: 9.2pt; color: #777; }
+</style>
+</head>
+<body>
+
+<div class="name">Sergey</div>
+<div class="role">Веб-дизайнер, фронтенд-разработчик · BSA Design</div>
+<div class="contacts">
+  <span>Работаю удалённо · готовлюсь к переезду во Вьетнам</span><i>·</i><span>Telegram: @bsa_dsgn</span><br>
+  <span>bsadsgn.art</span><i>·</i><span>instagram.com/bsa_dsgn</span><i>·</i><span>behance.net/qqye2</span><i>·</i><span>t.me/bsadsgn</span>
+</div>
+<hr>
+
+<h2>Коротко</h2>
+<p>Делаю сайты под ключ для небольшого бизнеса: структура, дизайн, вёрстка. Сайт не остаётся
+макетом в Figma — он верстается и открывается в браузере. Работаю один, под маркой BSA Design,
+от разговора с заказчиком до передачи готовых файлов. Больше пяти лет практики.</p>
+<p class="sub">Русский — родной, английский — деловая переписка.</p>
+
+<h2>Опыт</h2>
+<div class="item">
+  <div class="row"><b>BSA Design — самостоятельная практика</b><span class="when">2020 — настоящее время</span></div>
+  <p>Дизайн и вёрстка сайтов, интерфейсы продуктов и игр, графика для маркетплейсов.
+  Больше тысячи выполненных дизайн-задач; основная их часть — карточки и инфографика
+  для Wildberries, Ozon и Amazon.</p>
+  <p>Веду проект целиком: разбор задачи, концепция, экраны, вёрстка, передача заказчику
+  вместе с объяснением, как править тексты и цены самому.</p>
+</div>
+
+<h2>Проекты</h2>
+
+<div class="item">
+  <div class="row"><b>CS:ZONE — сайт компьютерного клуба</b><span class="when">7 страниц</span></div>
+  <p>Вместо обычной формы брони — карта зала на 36 мест с теми же номерами, что нарисованы
+  на стенах клуба. Занятость подтягивается из клубной системы, клик по месту переносит номер
+  в заявку. Статика без бэкенда: цены и структура зала правятся в одном файле.</p>
+  <div class="role-line">Роль: UX, интерфейс, вёрстка, логика брони.</div>
+</div>
+
+<div class="item">
+  <div class="row"><b>«Версаль» — витрина дизайнерского света</b><span class="when">240 моделей</span></div>
+  <p>Каталог с фильтрами по стилю, материалу и цене и карточкой товара. Онлайн-продажи у клиента
+  нет, сделка идёт через звонок, поэтому вместо корзины — заявка с уже выбранной моделью.
+  Десктоп и мобильная версия собраны как две разные композиции.</p>
+  <div class="role-line">Роль: UX, интерфейс, вёрстка.</div>
+</div>
+
+<div class="item">
+  <div class="row"><b>«2048 Космооперация» — HTML5-игра</b><span class="when">Яндекс Игры</span></div>
+  <p>Игровой интерфейс, вся графика рисуется кодом — игра стартует мгновенно и масштабируется
+  под любой экран. Три языка, отмена хода, корректная работа при недоступности платформы.
+  Иконка и обложка для каталога — тоже мои.</p>
+  <div class="role-line">Роль: game UI, графика, сборка.</div>
+</div>
+
+<h2>Навыки</h2>
+<ul>
+  <li>Проектирование интерфейсов: сценарии, экраны, состояния, адаптив под телефон и десктоп</li>
+  <li>Figma, Photoshop, Illustrator</li>
+  <li>HTML, CSS, JavaScript — вёрстка и сборка статических сайтов без фреймворков</li>
+  <li>Доступность: управление с клавиатуры, контраст, поддержка reduced&nbsp;motion</li>
+  <li>Требования маркетплейсов: Wildberries, Ozon, Amazon</li>
+</ul>
+
+<p class="foot">Портфолио — bsadsgn.art и Telegram-канал t.me/bsadsgn.</p>
+
+</body>
+</html>

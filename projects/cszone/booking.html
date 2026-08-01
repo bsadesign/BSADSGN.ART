@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Забронировать место — CS:ZONE</title>
+<meta name="description" content="Бронь игрового места в клубе CS:ZONE: выберите зону и номер ПК, укажите дату и время. Подтверждение — от администратора.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CS:ZONE">
+<meta property="og:title" content="Забронировать место — CS:ZONE">
+<meta property="og:description" content="Бронь игрового места в клубе CS:ZONE: выберите зону и номер ПК, укажите дату и время. Подтверждение — от администратора.">
+<meta property="og:image" content="assets/img/logo-512.png">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CS:ZONE",
+  "description": "Компьютерный клуб в Краснодаре: 36 машин, два буткемпа, три ТВ-зоны.",
+  "image": "assets/img/logo-512.png",
+  "telephone": "+79180080885",
+  "priceRange": "120–1700 ₽",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RU",
+    "addressLocality": "Краснодар",
+    "streetAddress": "ул. Командорская, 3к2"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.090656, "longitude": 39.032451 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00", "closes": "23:59"
+  }],
+  "hasMap": "https://yandex.ru/maps/org/cs_zone/221049266006/",
+  "sameAs": ["https://t.me/cszoneclub"]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__logo" href="index.html" aria-label="CS:ZONE — на главную">
+      <img src="assets/img/logo.png" alt="" width="38" height="38">
+      <span><b>CS:ZONE</b><span>Краснодар</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Разделы сайта">
+      <a href="index.html">Главная</a>
+      <a href="prices.html">Цены</a>
+      <a href="hardware.html">Железо</a>
+      <a href="promos.html">Акции</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <a class="nav__tel" href="tel:+79180080885" style="margin-left:26px">8 918 008-08-85</a>
+    <a class="btn btn--primary btn--sm nav__cta" href="booking.html" style="margin-left:18px">Забронировать</a>
+    <button class="burger" type="button" aria-expanded="false" aria-label="Меню">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 7h20M3 13h20M3 19h20"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+    <a href="index.html">Главная</a>
+    <a href="prices.html">Цены</a>
+    <a href="hardware.html">Железо</a>
+    <a href="promos.html">Акции</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="rules.html">Правила</a>
+    <a class="btn btn--primary btn--wide" href="booking.html">Забронировать место</a>
+    <a class="btn btn--ghost btn--wide" href="tel:+79180080885">8 918 008-08-85</a>
+</div>
+
+<main>
+
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="hero__anim">
+      <p class="eyebrow">Бронь</p>
+      <h1 style="font-size:clamp(2.2rem,6vw,4.4rem);margin-top:20px;letter-spacing:-.03em">Забронировать место</h1>
+      <p class="lead" style="margin-top:24px">Два шага: выбираете место на карте зала, потом заполняете заявку. Бронь подтверждает администратор — по телефону или в Telegram.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="hall cut-l" data-rise>
+      <div class="hall__head">
+        <div>
+          <p class="eyebrow">Шаг 1</p>
+          <h2 class="h-sec" style="font-size:clamp(1.5rem,2.8vw,2.1rem)">Выберите место</h2>
+        </div>
+        <div class="hall__legend">
+          <span><i style="background:var(--live);border-radius:50%"></i>Свободно</span>
+          <span><i style="background:#1B1417"></i>Занято</span>
+          <span><i style="background:var(--amber)"></i>Выбрано</span>
+        </div>
+      </div>
+      <p class="live" data-live hidden></p>
+      <div data-hall="pick"></div>
+      <p class="hall__note">Наведите на номер — покажем железо этой машины.
+        Выбрано: <b id="pick-live" style="color:var(--amber)">пока ничего</b>.
+        Номер подставится в заявку. Если конкретное место не важно — просто выберите зону в форме ниже.</p>
+      <div class="toast" id="booking-toast" role="status" aria-live="polite"
+           style="margin-top:18px"></div>
+      <div class="spec-panel" id="spec-panel" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="split split--wide" style="align-items:start">
+      <div class="panel cut-l" data-rise>
+        <p class="eyebrow">Шаг 2</p>
+        <h2 class="h-sec" style="font-size:clamp(1.5rem,2.8vw,2.1rem);margin-bottom:30px">Заявка</h2>
+
+        <form class="form" id="booking-form" novalidate>
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+7 ___ ___-__-__" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="f-date">Дата</label>
+            <input id="f-date" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="f-time">Время</label>
+            <input id="f-time" name="time" type="time" required>
+          </div>
+          <div class="field">
+            <label for="f-hours">Сколько часов</label>
+            <select id="f-hours" name="hours">
+              <option>1</option><option>2</option><option selected>3</option>
+              <option>4</option><option>5</option><option>6</option><option>Ночь</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-people">Гостей</label>
+            <select id="f-people" name="people">
+              <option selected>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6–10</option><option>Больше 10</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-zone">Зона</label>
+            <select id="f-zone" name="zone">
+              <option value="standart">Зал STANDART — №06–30</option>
+              <option value="bootcamp1">Буткемп I — №01–05</option>
+              <option value="bootcamp2">Буткемп II — №31–36</option>
+              <option value="tv">Standart TV</option>
+              <option value="vip">TV VIP</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-pc">Номер места</label>
+            <input id="f-pc" name="pc" type="text" placeholder="Любое свободное">
+          </div>
+          <div class="field field--full">
+            <label for="f-note">Комментарий</label>
+            <textarea id="f-note" name="note" placeholder="Игра, состав, пожелания по месту"></textarea>
+          </div>
+
+          <div class="form__foot">
+            <button class="btn btn--primary" type="button" id="btn-send">Отправить в Telegram</button>
+            <button class="btn btn--ghost" type="button" id="btn-copy">Скопировать заявку</button>
+            <a class="btn btn--ghost" href="tel:+79180080885">Позвонить</a>
+          </div>
+          <p class="form__hint" style="grid-column:1/-1">Кнопка копирует заявку и открывает чат клуба —
+            останется вставить текст и отправить. Бронь считается подтверждённой после ответа администратора.</p>
+        </form>
+      </div>
+
+      <div data-rise="90">
+        <div class="panel cut-l">
+          <p class="eyebrow">Как это работает</p>
+          <ul class="rules" style="grid-template-columns:1fr;margin-top:24px">
+            <li><b>01</b><span>Выбираете место и заполняете заявку.</span></li>
+            <li><b>02</b><span>Заявка уходит в Telegram клуба или диктуется по телефону.</span></li>
+            <li><b>03</b><span>Администратор подтверждает бронь и держит место к вашему времени.</span></li>
+          </ul>
+        </div>
+
+        <div class="panel cut-l" style="margin-top:20px">
+          <p class="eyebrow">Быстрее — голосом</p>
+          <p style="color:var(--ash);margin-top:16px">Если играете сегодня и время поджимает,
+            звонок надёжнее: администратор сразу скажет, что свободно.</p>
+          <a class="btn btn--primary btn--wide" href="tel:+79180080885" style="margin-top:22px">8 918 008-08-85</a>
+          <a class="btn btn--ghost btn--wide" href='https://t.me/cszoneclub' target="_blank" rel="noopener" style="margin-top:12px">Telegram клуба</a>
+        </div>
+
+        <p class="form__hint" style="margin-top:22px">Бронируя место, вы соглашаетесь с
+          <a href="rules.html" style="color:var(--amber)">правилами клуба</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<hr class="rule-spectrum">
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="foot__logo" href="index.html">
+          <img src="assets/img/logo.png" alt="" width="46" height="46">
+          <span><b>CS:ZONE</b><span>Gaming club</span></span>
+        </a>
+        <p>Компьютерный клуб в Краснодаре. 36 машин, два буткемпа и три ТВ-зоны в одном зале.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="prices.html">Цены</a></li>
+          <li><a href="hardware.html">Железо</a></li>
+          <li><a href="promos.html">Акции</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Клуб</h4>
+        <ul>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="booking.html">Забронировать</a></li>
+          <li><a href="rules.html">Правила клуба</a></li>
+          <li><a href="https://t.me/cszoneclub" target="_blank" rel="noopener">Telegram-канал</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <a class="foot__c" href="tel:+79180080885">8 918 008-08-85</a>
+        <a class="foot__c" href="https://yandex.ru/maps/org/cs_zone/221049266006/" target="_blank" rel="noopener">г. Краснодар, ул. Командорская 3к2</a>
+        <a class="foot__c" href="https://t.me/cszoneclub" target="_blank" rel="noopener">@cszoneclub</a>
+        <span class="foot__c" style="color:var(--ash)">Круглосуточно, 24/7</span>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span id="year">2026</span> CS:ZONE</span>
+      <a href="rules.html">Правила клуба</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

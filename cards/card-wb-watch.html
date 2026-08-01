@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Tektur;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Tektur-Medium.ttf');font-weight:600}
+@font-face{font-family:Tektur;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Tektur-Regular.ttf');font-weight:400}
+@font-face{font-family:Jura;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Jura-Medium.ttf');font-weight:500}
+@font-face{font-family:Jura;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Jura-Light.ttf');font-weight:300}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:900px;height:1200px;overflow:hidden;background:#07050F;font-family:Jura,sans-serif;color:#fff}
+.card{position:relative;width:900px;height:1200px;
+  background:
+    radial-gradient(600px 520px at 78% 26%, rgba(124,58,237,.55), transparent 62%),
+    radial-gradient(520px 460px at 16% 74%, rgba(34,211,238,.30), transparent 62%),
+    radial-gradient(900px 700px at 50% 50%, #150C2E, #07050F 72%);
+  overflow:hidden}
+.grid{position:absolute;inset:0;opacity:.16;
+  background-image:linear-gradient(rgba(167,139,250,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,.5) 1px,transparent 1px);
+  background-size:60px 60px;
+  -webkit-mask-image:radial-gradient(700px 700px at 50% 40%,#000,transparent 75%)}
+.badge{position:absolute;top:44px;right:44px;padding:12px 20px;border-radius:999px;
+  background:linear-gradient(135deg,#22D3EE,#7C3AED);font-family:Tektur;font-weight:600;font-size:22px;letter-spacing:.06em}
+.brand{position:absolute;top:52px;left:48px;font-family:Tektur;font-weight:600;font-size:20px;letter-spacing:.42em;color:#A78BFA}
+h1{position:absolute;top:104px;left:48px;font-family:Tektur;font-weight:600;font-size:96px;line-height:.92;letter-spacing:-.02em;
+  background:linear-gradient(180deg,#fff,#C4B5FD);-webkit-background-clip:text;color:transparent;text-shadow:0 0 60px rgba(167,139,250,.4)}
+.sub{position:absolute;top:296px;left:52px;font-size:30px;font-weight:300;letter-spacing:.3em;color:#C4B5FD;text-transform:uppercase}
+.watch{position:absolute;right:26px;top:330px}
+.feats{position:absolute;left:48px;bottom:150px;display:flex;flex-direction:column;gap:34px}
+.f{display:flex;align-items:center;gap:20px}
+.f .ic{width:66px;height:66px;flex:none;border-radius:19px;display:grid;place-items:center;
+  background:linear-gradient(140deg,rgba(167,139,250,.30),rgba(34,211,238,.16));border:1px solid rgba(196,181,253,.45);
+  box-shadow:0 0 26px rgba(124,58,237,.4)}
+.f .tx{font-size:30px;font-weight:500;line-height:1.16;letter-spacing:.01em;max-width:390px}
+.f .tx b{display:block;font-family:Tektur;font-weight:600;font-size:33px;color:#fff}
+.f .tx span{color:#A5B4FC;font-weight:300;font-size:25px}
+.strip{position:absolute;left:0;right:0;bottom:0;height:96px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;background:linear-gradient(90deg,rgba(124,58,237,.85),rgba(34,211,238,.7));font-family:Tektur;font-weight:600}
+.strip div{font-size:26px;letter-spacing:.12em}
+.strip .m{font-size:22px;opacity:.9;letter-spacing:.2em}
+</style></head><body>
+<div class="card">
+  <div class="grid"></div>
+  <div class="brand">NOVIQ</div>
+  <div class="badge">ХИТ 2026</div>
+  <h1>SMART<br>WATCH S3</h1>
+  <div class="sub">Amoled · 1.96″</div>
+
+  <svg class="watch" width="470" height="640" viewBox="0 0 470 640" fill="none">
+    <defs>
+      <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"    stop-color="#3B3550"/>
+        <stop offset=".07"  stop-color="#6E6689"/>
+        <stop offset=".17"  stop-color="#CFC8E4"/>
+        <stop offset=".27"  stop-color="#F3EFFB"/>
+        <stop offset=".40"  stop-color="#A8A0C2"/>
+        <stop offset=".58"  stop-color="#6A6284"/>
+        <stop offset=".76"  stop-color="#403A56"/>
+        <stop offset=".90"  stop-color="#8C84A8"/>
+        <stop offset="1"    stop-color="#332E46"/>
+      </linearGradient>
+      <linearGradient id="bodyTone" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+        <stop offset=".3" stop-color="#fff" stop-opacity="0"/>
+        <stop offset=".85" stop-color="#120E24" stop-opacity="0"/>
+        <stop offset="1" stop-color="#120E24" stop-opacity=".4"/>
+      </linearGradient>
+      <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"    stop-color="#100C1F"/>
+        <stop offset=".10"  stop-color="#2B2246"/>
+        <stop offset=".26"  stop-color="#5A4C86"/>
+        <stop offset=".40"  stop-color="#3B3160"/>
+        <stop offset=".64"  stop-color="#221B3A"/>
+        <stop offset=".86"  stop-color="#443A6B"/>
+        <stop offset="1"    stop-color="#0E0A1B"/>
+      </linearGradient>
+      <linearGradient id="screen" x1="0" y1="0" x2=".7" y2="1">
+        <stop offset="0" stop-color="#0B0A1B"/><stop offset="1" stop-color="#191036"/>
+      </linearGradient>
+      <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#22D3EE"/><stop offset=".5" stop-color="#818CF8"/><stop offset="1" stop-color="#F472B6"/>
+      </linearGradient>
+      <linearGradient id="gloss" x1="0" y1="0" x2=".55" y2="1">
+        <stop offset="0"   stop-color="#fff" stop-opacity=".30"/>
+        <stop offset=".26" stop-color="#fff" stop-opacity=".07"/>
+        <stop offset=".42" stop-color="#fff" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1">
+        <stop offset=".30" stop-color="#fff" stop-opacity="0"/>
+        <stop offset=".44" stop-color="#fff" stop-opacity=".16"/>
+        <stop offset=".52" stop-color="#fff" stop-opacity=".05"/>
+        <stop offset=".60" stop-color="#fff" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="26"/>
+      </filter>
+    </defs>
+
+    <ellipse cx="235" cy="330" rx="180" ry="200" fill="#7C3AED" opacity=".55" filter="url(#soft)"/>
+
+    <path d="M138 130 L332 130 L318 24 Q315 6 296 6 L174 6 Q155 6 152 24 Z" fill="url(#strap)"/>
+    <path d="M138 530 L332 530 L318 636 Q315 654 296 654 L174 654 Q155 654 152 636 Z" fill="url(#strap)"/>
+    <g opacity=".5" stroke="#0E0A1C" stroke-width="3">
+      <path d="M162 40 H308"/><path d="M164 74 H306"/><path d="M166 106 H304"/>
+      <path d="M166 556 H304"/><path d="M164 590 H306"/><path d="M162 622 H308"/>
+    </g>
+
+    <rect x="112" y="108" width="246" height="444" rx="96" fill="url(#body)"/>
+    <rect x="124" y="120" width="222" height="420" rx="86" fill="#100C22"/>
+    <rect x="134" y="130" width="202" height="400" rx="78" fill="url(#screen)"/>
+
+    <g transform="translate(235,330)">
+      <circle r="112" fill="none" stroke="#2A2350" stroke-width="16"/>
+      <circle r="112" fill="none" stroke="url(#ring)" stroke-width="16" stroke-linecap="round"
+              stroke-dasharray="540 704" transform="rotate(-96)"/>
+      <circle r="80" fill="none" stroke="#221C46" stroke-width="12"/>
+      <circle r="80" fill="none" stroke="#22D3EE" stroke-width="12" stroke-linecap="round"
+              stroke-dasharray="300 503" transform="rotate(-96)" opacity=".9"/>
+      <text y="-4" text-anchor="middle" font-family="Tektur" font-weight="600" font-size="66" fill="#fff">10:24</text>
+      <text y="42" text-anchor="middle" font-family="Jura" font-weight="500" font-size="26" fill="#A5B4FC" letter-spacing="4">ПН 14 ИЮЛЯ</text>
+    </g>
+    <text x="235" y="196" text-anchor="middle" font-family="Jura" font-weight="500" font-size="25" fill="#7C7AA8" letter-spacing="5">78 BPM</text>
+    <text x="235" y="486" text-anchor="middle" font-family="Jura" font-weight="500" font-size="25" fill="#7C7AA8" letter-spacing="5">12 480 ШАГОВ</text>
+
+    <rect x="352" y="256" width="22" height="66" rx="11" fill="#CFC8E6"/>
+    <rect x="352" y="352" width="16" height="46" rx="8" fill="#9A93B8"/>
+    <rect x="112" y="108" width="246" height="444" rx="96" fill="url(#bodyTone)" opacity=".85"/>
+    <rect x="134" y="130" width="202" height="400" rx="78" fill="url(#gloss)"/>
+    <rect x="134" y="130" width="202" height="400" rx="78" fill="url(#streak)"/>
+  </svg>
+
+  <div class="feats">
+    <div class="f"><div class="ic">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a5.5 5.5 0 0 0-8.8-1.4L12 5.3l-.1-.1a5.5 5.5 0 1 0-7.8 7.8L12 21l7.9-8a5.5 5.5 0 0 0 .9-6.4Z"/></svg>
+    </div><div class="tx"><b>Пульс и кислород</b><span>Датчик нового поколения, замер 24/7</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="3"/><path d="M22 11v2"/><path d="M5 11v2"/></svg>
+    </div><div class="tx"><b>14 дней без розетки</b><span>Аккумулятор 460 мА·ч</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><circle cx="12" cy="14" r="7"/><path d="M12 11v3l2 2"/></svg>
+    </div><div class="tx"><b>120 режимов спорта</b><span>Бег, зал, плавание, велосипед</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l-1 8-5 4-5-4Z"/><path d="M4 21h16"/><path d="M12 15v6"/></svg>
+    </div><div class="tx"><b>Защита IP68</b><span>Дождь, душ и бассейн не страшны</span></div></div>
+  </div>
+
+  <div class="strip">
+    <div>ЗВОНКИ ЧЕРЕЗ BLUETOOTH</div>
+    <div class="m">ANDROID · IOS</div>
+  </div>
+</div>
+</body></html>

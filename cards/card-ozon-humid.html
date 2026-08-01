@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Jura;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Jura-Medium.ttf');font-weight:500}
+@font-face{font-family:Jura;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Jura-Light.ttf');font-weight:300}
+@font-face{font-family:Lora;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Lora-Bold.ttf');font-weight:700}
+@font-face{font-family:Lora;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Lora-Italic.ttf');font-style:italic}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:900px;height:1200px;overflow:hidden}
+.card{position:relative;width:900px;height:1200px;overflow:hidden;font-family:Jura,sans-serif;color:#E6F4F1;
+  background:
+    radial-gradient(620px 560px at 66% 46%, rgba(45,212,191,.28), transparent 64%),
+    radial-gradient(700px 620px at 18% 10%, rgba(56,116,152,.30), transparent 62%),
+    linear-gradient(170deg,#07211F,#04100F 62%,#020908)}
+.stars{position:absolute;inset:0;opacity:.5;
+  background-image:radial-gradient(1.6px 1.6px at 12% 18%,#B9F0E6,transparent),radial-gradient(1.4px 1.4px at 78% 12%,#9FE3D8,transparent),
+  radial-gradient(1.6px 1.6px at 32% 8%,#CFF6EE,transparent),radial-gradient(1.2px 1.2px at 88% 34%,#9FE3D8,transparent),
+  radial-gradient(1.4px 1.4px at 6% 42%,#B9F0E6,transparent)}
+.brand{position:absolute;top:52px;left:56px;font-weight:500;font-size:21px;letter-spacing:.44em;color:#5EEAD4}
+.badge{position:absolute;top:46px;right:56px;padding:13px 22px;border-radius:999px;border:1px solid rgba(94,234,212,.5);
+  font-size:21px;letter-spacing:.14em;color:#5EEAD4}
+h1{position:absolute;top:108px;left:56px;font-family:Lora;font-weight:700;font-size:96px;line-height:.94;letter-spacing:-.03em;color:#EAFBF7}
+h1 em{font-style:italic;font-weight:400;color:#5EEAD4}
+.sub{position:absolute;top:314px;left:60px;font-weight:300;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:#8FBDB5}
+.dev{position:absolute;right:56px;top:276px}
+.feats{position:absolute;left:56px;bottom:168px;display:flex;flex-direction:column;gap:32px}
+.f{display:flex;align-items:center;gap:20px}
+.f .ic{width:62px;height:62px;flex:none;border-radius:18px;display:grid;place-items:center;
+  background:rgba(45,212,191,.12);border:1px solid rgba(94,234,212,.34)}
+.f .tx{max-width:400px}
+.f .tx b{display:block;font-family:Lora;font-weight:700;font-size:30px;line-height:1.14;color:#EAFBF7}
+.f .tx span{font-weight:300;font-size:24px;color:#8FBDB5}
+.strip{position:absolute;left:0;right:0;bottom:0;height:98px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;background:linear-gradient(90deg,rgba(13,148,136,.9),rgba(8,51,68,.9));font-size:24px;letter-spacing:.14em;text-transform:uppercase}
+.strip .r{font-family:Lora;font-weight:700;color:#5EEAD4;letter-spacing:.04em}
+</style></head><body>
+<div class="card">
+  <div class="stars"></div>
+  <div class="brand">AQUA MIST</div>
+  <div class="badge">ТИХО · 24 дБ</div>
+  <h1>УВЛАЖНИТЕЛЬ<br><em>воздуха</em> 4 л</h1>
+  <div class="sub">Ночь без сухого горла</div>
+
+  <svg class="dev" width="360" height="640" viewBox="0 0 360 640" fill="none">
+    <defs>
+      <!-- матовый пластик, цилиндр: тень-край → блик → тело → тень → рефлекс -->
+      <linearGradient id="bodyG" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"    stop-color="#0A2422"/>
+        <stop offset=".07"  stop-color="#17423E"/>
+        <stop offset=".18"  stop-color="#4E827B"/>
+        <stop offset=".29"  stop-color="#D8ECE7"/>
+        <stop offset=".40"  stop-color="#8FB8B2"/>
+        <stop offset=".58"  stop-color="#3C6C67"/>
+        <stop offset=".78"  stop-color="#173F3B"/>
+        <stop offset=".91"  stop-color="#3E706A"/>
+        <stop offset="1"    stop-color="#0B2725"/>
+      </linearGradient>
+      <linearGradient id="tankG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0"   stop-color="#8DF0DF" stop-opacity=".18"/>
+        <stop offset=".34" stop-color="#5EEAD4" stop-opacity=".42"/>
+        <stop offset="1"   stop-color="#0D9488" stop-opacity=".72"/>
+      </linearGradient>
+      <linearGradient id="woodG" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"   stop-color="#2A1D13"/>
+        <stop offset=".16" stop-color="#61462E"/>
+        <stop offset=".3"  stop-color="#9C7550"/>
+        <stop offset=".47" stop-color="#71543A"/>
+        <stop offset=".74" stop-color="#3B2A1C"/>
+        <stop offset=".9"  stop-color="#63472F"/>
+        <stop offset="1"   stop-color="#241811"/>
+      </linearGradient>
+      <linearGradient id="reflG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3C6C67" stop-opacity=".34"/>
+        <stop offset="1" stop-color="#3C6C67" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="glowG" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#8DF0DF" stop-opacity=".55"/>
+        <stop offset="1" stop-color="#8DF0DF" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="mistBlur" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="13"/></filter>
+      <filter id="mistSoft" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="26"/></filter>
+      <filter id="shSoft" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="15"/></filter>
+      <filter id="shTight" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="5"/></filter>
+      <clipPath id="devClip">
+        <path d="M92 236 h176 a16 16 0 0 1 16 16 v250 a26 26 0 0 1 -26 26 h-156 a26 26 0 0 1 -26 -26 v-250 a16 16 0 0 1 16 -16 Z"/>
+      </clipPath>
+    </defs>
+
+    <!-- тень на поверхности -->
+    <ellipse cx="180" cy="596" rx="132" ry="18" fill="#052E2B" opacity=".62" filter="url(#shSoft)"/>
+    <ellipse cx="180" cy="592" rx="72" ry="9" fill="#021A18" opacity=".5" filter="url(#shTight)"/>
+
+    <!-- пар: тонкие струи, а не облако -->
+    <g filter="url(#mistSoft)" opacity=".55">
+      <ellipse cx="180" cy="120" rx="74" ry="86" fill="url(#glowG)"/>
+    </g>
+    <g filter="url(#mistBlur)" fill="none" stroke-linecap="round">
+      <path d="M180 216 q-10 -46 4 -78 q14 -32 -2 -62 q-12 -24 -2 -46"
+            stroke="#B6F5E9" stroke-width="11" opacity=".42"/>
+      <path d="M156 220 q-16 -40 -4 -70 q12 -30 -4 -54"
+            stroke="#8DF0DF" stroke-width="8" opacity=".30"/>
+      <path d="M206 220 q16 -42 4 -72 q-12 -28 4 -52"
+            stroke="#8DF0DF" stroke-width="8" opacity=".28"/>
+      <path d="M180 214 q-4 -30 2 -52" stroke="#DFFAF4" stroke-width="6" opacity=".35"/>
+    </g>
+
+    <!-- корпус -->
+    <g clip-path="url(#devClip)">
+      <rect x="76" y="230" width="208" height="304" fill="url(#bodyG)"/>
+      <!-- окно бака -->
+      <rect x="112" y="300" width="136" height="196" rx="12" fill="#04211F" opacity=".55"/>
+      <rect x="112" y="318" width="136" height="178" rx="12" fill="url(#tankG)"/>
+      <rect x="112" y="318" width="136" height="7" fill="#CFF8F0" opacity=".6"/>
+      <!-- вертикальный блик по стеклу -->
+      <rect x="126" y="300" width="14" height="196" fill="#EAFFFA" opacity=".22"/>
+      <rect x="228" y="300" width="7" height="196" fill="#EAFFFA" opacity=".10"/>
+      <!-- нижнее затемнение -->
+      <ellipse cx="180" cy="534" rx="118" ry="30" fill="#04100F" opacity=".5"/>
+    </g>
+    <path d="M92 236 h176 a16 16 0 0 1 16 16 v250 a26 26 0 0 1 -26 26 h-156 a26 26 0 0 1 -26 -26 v-250 a16 16 0 0 1 16 -16 Z"
+          fill="none" stroke="#031816" stroke-opacity=".5" stroke-width="2"/>
+
+    <!-- деревянное основание -->
+    <path d="M88 512 h184 a12 12 0 0 1 12 12 v28 a30 30 0 0 1 -30 30 h-148 a30 30 0 0 1 -30 -30 v-28 a12 12 0 0 1 12 -12 Z" fill="url(#woodG)"/>
+    <path d="M88 512 h184 a12 12 0 0 1 12 12 v4 h-208 v-4 a12 12 0 0 1 12 -12 Z" fill="#C79A6B" opacity=".35"/>
+
+    <!-- горловина -->
+    <rect x="106" y="206" width="148" height="34" rx="14" fill="#0A2C29"/>
+    <ellipse cx="180" cy="208" rx="74" ry="18" fill="#164A45"/>
+    <ellipse cx="180" cy="206" rx="42" ry="11" fill="#03100F"/>
+    <ellipse cx="180" cy="204" rx="42" ry="11" fill="#3E938A" opacity=".7"/>
+    <ellipse cx="166" cy="201" rx="17" ry="4" fill="#CFF8F0" opacity=".35"/>
+
+    <!-- кнопка -->
+    <circle cx="180" cy="470" r="16" fill="#02100F" opacity=".55"/>
+    <circle cx="180" cy="470" r="9" fill="#5EEAD4"/>
+    <circle cx="180" cy="470" r="16" fill="none" stroke="#5EEAD4" stroke-opacity=".45" stroke-width="1.5"/>
+
+    <!-- отражение на поверхности -->
+    <g opacity=".45" transform="translate(0,1176) scale(1,-1)" clip-path="url(#devClip)">
+      <rect x="76" y="230" width="208" height="304" fill="url(#reflG)"/>
+    </g>
+  </svg>
+
+  <div class="feats">
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s5.5 6 5.5 9.6A5.5 5.5 0 0 1 6.5 12.6C6.5 9 12 3 12 3Z"/></svg>
+    </div><div class="tx"><b>4 литра — на 30 часов</b><span>Заливаете вечером, забываете на сутки</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-5 3 10 3-8 2 3h5"/></svg>
+    </div><div class="tx"><b>24 дБ — тише шёпота</b><span>Не разбудит ни вас, ни ребёнка</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v2"/><path d="M12 18v2"/><path d="M4 12h2"/><path d="M18 12h2"/><circle cx="12" cy="12" r="4.5"/></svg>
+    </div><div class="tx"><b>Мягкая ночная подсветка</b><span>Выключается одним касанием</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5Z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+    </div><div class="tx"><b>Верхний залив воды</b><span>Не нужно снимать и переворачивать бак</span></div></div>
+  </div>
+
+  <div class="strip">
+    <div>Пар 320 мл/ч</div>
+    <div class="r">Автоотключение без воды</div>
+  </div>
+</div>
+</body></html>

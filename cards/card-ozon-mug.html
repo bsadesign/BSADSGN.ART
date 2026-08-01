@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Lora;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Lora-Bold.ttf');font-weight:700}
+@font-face{font-family:Lora;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Lora-Regular.ttf');font-weight:400}
+@font-face{font-family:Jura;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Jura-Medium.ttf');font-weight:500}
+@font-face{font-family:Jura;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Jura-Light.ttf');font-weight:300}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:900px;height:1200px;overflow:hidden}
+.card{position:relative;width:900px;height:1200px;overflow:hidden;
+  background:radial-gradient(780px 660px at 32% 20%, #FFFDFA, #F4EBDD 56%, #E3D3BC 100%);
+  font-family:Jura,sans-serif;color:#2A2016}
+.arc{position:absolute;width:1220px;height:1220px;border-radius:50%;right:-400px;top:-320px;
+  background:linear-gradient(150deg,#C2703A,#8E4A24);opacity:.10}
+.brand{position:absolute;top:54px;left:56px;font-family:Lora;font-weight:700;font-size:23px;letter-spacing:.36em;color:#9A5A2C}
+.badge{position:absolute;top:48px;right:56px;padding:14px 24px;border-radius:6px;background:#8E4A24;color:#FFF6EA;
+  font-family:Jura;font-weight:500;font-size:23px;letter-spacing:.16em}
+h1{position:absolute;top:112px;left:56px;font-family:Lora;font-weight:700;font-size:100px;line-height:.94;letter-spacing:-.025em;color:#241A11}
+h1 em{font-style:normal;color:#9A5A2C}
+.sub{position:absolute;top:322px;left:60px;font-size:28px;font-weight:300;letter-spacing:.24em;text-transform:uppercase;color:#6E5946}
+.rule{position:absolute;top:382px;left:60px;width:180px;height:3px;background:#9A5A2C}
+.mug{position:absolute;right:44px;top:286px}
+.hours{position:absolute;left:60px;top:432px}
+.hours b{display:block;font-family:Lora;font-weight:700;font-size:78px;line-height:.9;color:#8E4A24}
+.hours span{font-size:22px;letter-spacing:.2em;text-transform:uppercase;color:#6E5946}
+.feats{position:absolute;left:56px;bottom:170px;display:flex;flex-direction:column;gap:28px}
+.f{display:flex;align-items:center;gap:18px}
+.f .ic{width:60px;height:60px;flex:none;border-radius:50%;display:grid;place-items:center;background:#FFF9F0;border:2px solid #E0C7A6}
+.f .tx{max-width:360px}
+.f .tx b{display:block;font-family:Lora;font-weight:700;font-size:30px;color:#241A11;line-height:1.15}
+.f .tx span{font-size:23px;font-weight:300;color:#6E5946}
+.strip{position:absolute;left:0;right:0;bottom:0;height:104px;background:#241A11;display:flex;align-items:center;
+  justify-content:space-between;padding:0 56px;color:#F4E7D4}
+.strip div{font-size:25px;letter-spacing:.14em;text-transform:uppercase}
+.strip .r{font-family:Lora;font-weight:700;letter-spacing:.06em;color:#E9A860}
+</style></head><body>
+<div class="card">
+  <div class="arc"></div>
+  <div class="brand">TERMA</div>
+  <div class="badge">СТАЛЬ 304</div>
+  <h1>ТЕРМО<br>КРУЖКА <em>500</em></h1>
+  <div class="sub">Держит вкус, а не запах</div>
+  <div class="rule"></div>
+  <div class="hours"><b>12ч</b><span>держит горячим</span></div>
+
+  <svg class="mug" width="400" height="660" viewBox="0 0 400 660" fill="none">
+    <defs>
+      <!-- матовая нержавейка: тёмный край → блик → корпус → тёмный край → рефлекс -->
+      <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"    stop-color="#4E4A45"/>
+        <stop offset=".055" stop-color="#7C766E"/>
+        <stop offset=".15"  stop-color="#C9C2B8"/>
+        <stop offset=".26"  stop-color="#F4F0E9"/>
+        <stop offset=".37"  stop-color="#CFC7BC"/>
+        <stop offset=".55"  stop-color="#9C948A"/>
+        <stop offset=".74"  stop-color="#6A645C"/>
+        <stop offset=".90"  stop-color="#8E877D"/>
+        <stop offset="1"    stop-color="#4A4640"/>
+      </linearGradient>
+      <linearGradient id="steelTone" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity=".18"/>
+        <stop offset=".22" stop-color="#fff" stop-opacity="0"/>
+        <stop offset=".82" stop-color="#2B2620" stop-opacity="0"/>
+        <stop offset="1" stop-color="#2B2620" stop-opacity=".38"/>
+      </linearGradient>
+      <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"   stop-color="#131110"/>
+        <stop offset=".14" stop-color="#3B3632"/>
+        <stop offset=".28" stop-color="#5A534C"/>
+        <stop offset=".46" stop-color="#2E2A26"/>
+        <stop offset=".72" stop-color="#1A1715"/>
+        <stop offset=".9"  stop-color="#3A342F"/>
+        <stop offset="1"   stop-color="#100E0D"/>
+      </linearGradient>
+      <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#5A2C10"/><stop offset=".22" stop-color="#B6673A"/>
+        <stop offset=".4" stop-color="#D98A50"/><stop offset=".62" stop-color="#A05528"/>
+        <stop offset="1" stop-color="#4E260E"/>
+      </linearGradient>
+      <linearGradient id="refl" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#9C948A" stop-opacity=".30"/>
+        <stop offset="1" stop-color="#9C948A" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="blurA" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+      <filter id="blurB" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+      <clipPath id="bodyClip">
+        <path d="M116 176 h168 a16 16 0 0 1 16 16 l-8 300 q-3 62 -26 96 a22 22 0 0 1 -18 10 h-96 a22 22 0 0 1 -18 -10 q-23 -34 -26 -96 l-8 -300 a16 16 0 0 1 16 -16 Z"/>
+      </clipPath>
+    </defs>
+
+    <!-- контактная тень -->
+    <ellipse cx="200" cy="602" rx="132" ry="17" fill="#6B4E33" opacity=".42" filter="url(#blurA)"/>
+    <ellipse cx="200" cy="598" rx="74" ry="9" fill="#4A3323" opacity=".45" filter="url(#blurB)"/>
+
+    <!-- пар -->
+    <g opacity=".42" stroke="#A8907A" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#blurB)">
+      <path d="M156 96 q-18 -26 -2 -50 q16 -24 0 -44"/>
+      <path d="M200 78 q-20 -30 -2 -56 q18 -26 0 -48"/>
+      <path d="M244 96 q-18 -26 -2 -50 q16 -24 0 -44"/>
+    </g>
+
+    <!-- корпус -->
+    <g clip-path="url(#bodyClip)">
+      <rect x="90" y="160" width="220" height="450" fill="url(#steel)"/>
+      <!-- шлифовка -->
+      <g opacity=".16" stroke="#fff">
+        <path d="M132 160 V610" stroke-width="1"/><path d="M148 160 V610" stroke-width="2"/>
+        <path d="M170 160 V610" stroke-width="1"/><path d="M196 160 V610" stroke-width="1"/>
+        <path d="M226 160 V610" stroke-width="1"/><path d="M252 160 V610" stroke-width="2"/>
+        <path d="M272 160 V610" stroke-width="1"/>
+      </g>
+      <rect x="90" y="160" width="220" height="450" fill="url(#steelTone)"/>
+      <!-- цветная лента с логотипом -->
+      <rect x="90" y="330" width="220" height="62" fill="url(#band)"/>
+      <rect x="90" y="330" width="220" height="6" fill="#fff" opacity=".22"/>
+      <rect x="90" y="386" width="220" height="6" fill="#2A1405" opacity=".35"/>
+      <!-- нижнее затемнение -->
+      <ellipse cx="200" cy="600" rx="120" ry="34" fill="#241C14" opacity=".45"/>
+    </g>
+    <path d="M116 176 h168 a16 16 0 0 1 16 16 l-8 300 q-3 62 -26 96 a22 22 0 0 1 -18 10 h-96 a22 22 0 0 1 -18 -10 q-23 -34 -26 -96 l-8 -300 a16 16 0 0 1 16 -16 Z"
+          fill="none" stroke="#2C2620" stroke-opacity=".35" stroke-width="2"/>
+
+    <!-- крышка -->
+    <rect x="106" y="122" width="188" height="62" rx="14" fill="url(#lid)"/>
+    <rect x="106" y="122" width="188" height="9" rx="4" fill="#7C746B" opacity=".55"/>
+    <rect x="112" y="176" width="176" height="10" rx="5" fill="#0C0A09" opacity=".55"/>
+    <rect x="124" y="86" width="152" height="44" rx="16" fill="url(#lid)"/>
+    <rect x="124" y="86" width="152" height="7" rx="3" fill="#8A8177" opacity=".5"/>
+    <rect x="152" y="98" width="96" height="12" rx="6" fill="#0D0B0A" opacity=".8"/>
+    <rect x="152" y="98" width="96" height="4" rx="2" fill="#9A9089" opacity=".4"/>
+    <circle cx="200" cy="154" r="10" fill="#C2703A"/>
+    <circle cx="197" cy="151" r="3.4" fill="#F0B183" opacity=".8"/>
+
+    <text x="200" y="374" text-anchor="middle" font-family="Lora" font-weight="700" font-size="26" fill="#FFF3E2" letter-spacing="7">TERMA</text>
+
+    <!-- отражение на столе -->
+    <g opacity=".5" transform="translate(0,1196) scale(1,-1)" clip-path="url(#bodyClip)">
+      <rect x="90" y="160" width="220" height="450" fill="url(#refl)"/>
+    </g>
+  </svg>
+
+  <div class="feats">
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8E4A24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s5 4.6 5 8.4A5 5 0 0 1 7 11.4C7 7.6 12 3 12 3Z"/></svg>
+    </div><div class="tx"><b>Двойная стенка, вакуум</b><span>Снаружи не горячо, внутри — кипяток</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8E4A24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M8 8h8"/><path d="M8 16h8"/><circle cx="12" cy="12" r="9"/></svg>
+    </div><div class="tx"><b>Крышка-непроливайка</b><span>Кладите в сумку без страха</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8E4A24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4Z"/><path d="M8 5v14"/><path d="M16 5v14"/></svg>
+    </div><div class="tx"><b>Влезает в подстаканник</b><span>Диаметр дна 68 мм</span></div></div>
+
+    <div class="f"><div class="ic">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8E4A24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 8c0 4 12 4 12 0"/><path d="M6 16c0-4 12-4 12 0"/></svg>
+    </div><div class="tx"><b>Сталь без привкуса</b><span>Кофе не пахнет вчерашним чаем</span></div></div>
+  </div>
+
+  <div class="strip">
+    <div>500 мл · 385 г</div>
+    <div class="r">6 цветов в наличии</div>
+  </div>
+</div>
+</body></html>

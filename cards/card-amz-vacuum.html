@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Outfit;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf');font-weight:700}
+@font-face{font-family:Outfit;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Regular.ttf');font-weight:400}
+@font-face{font-family:IPM;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Regular.ttf');font-weight:400}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1000px;height:1000px;overflow:hidden}
+.card{position:relative;width:1000px;height:1000px;overflow:hidden;background:#F4F5F7;font-family:Outfit,sans-serif;color:#14181F}
+.floor{position:absolute;left:0;right:0;bottom:0;height:430px;background:linear-gradient(180deg,#E7E9EE,#D6DAE2)}
+.floor::before{content:'';position:absolute;inset:0;opacity:.5;
+  background-image:repeating-linear-gradient(96deg,rgba(0,0,0,.06) 0 2px,transparent 2px 84px)}
+.beam{position:absolute;left:200px;bottom:0;width:640px;height:330px;
+  background:conic-gradient(from 200deg at 50% 0%, transparent 0deg, rgba(255,122,24,.30) 18deg, rgba(255,122,24,.06) 42deg, transparent 56deg);
+  filter:blur(2px)}
+.brand{position:absolute;top:46px;left:56px;font-family:IPM;font-size:19px;letter-spacing:.4em;color:#FF7A18}
+.badge{position:absolute;top:40px;right:56px;padding:12px 20px;border-radius:4px;background:#14181F;color:#fff;
+  font-family:IPM;font-size:18px;letter-spacing:.14em}
+h1{position:absolute;top:92px;left:56px;font-weight:700;font-size:100px;line-height:.9;letter-spacing:-.045em}
+h1 em{font-style:normal;color:#FF7A18}
+.sub{position:absolute;top:280px;left:60px;font-family:IPM;font-size:22px;letter-spacing:.2em;text-transform:uppercase;color:#5B6472}
+.bot{position:absolute;left:50%;transform:translateX(-50%);bottom:196px}
+.spec{position:absolute;display:flex;align-items:center;gap:12px}
+.spec .dot{width:12px;height:12px;border-radius:50%;background:#FF7A18;box-shadow:0 0 0 6px rgba(255,122,24,.18)}
+.spec .t b{display:block;font-weight:700;font-size:32px;line-height:1.05}
+.spec .t span{font-family:IPM;font-size:17px;color:#5B6472;letter-spacing:.06em}
+.s1{top:352px;left:56px}
+.s2{top:470px;left:56px}
+.s3{top:352px;right:56px;flex-direction:row-reverse;text-align:right}
+.s4{top:470px;right:56px;flex-direction:row-reverse;text-align:right}
+.strip{position:absolute;left:0;right:0;bottom:0;height:92px;background:#14181F;color:#fff;display:flex;align-items:center;
+  justify-content:space-between;padding:0 56px;font-family:IPM;font-size:20px;letter-spacing:.14em}
+.strip .o{color:#FF7A18}
+</style></head><body>
+<div class="card">
+  <div class="floor"></div>
+  <div class="beam"></div>
+  <div class="brand">VOLTA</div>
+  <div class="badge">LiDAR NAV 4.0</div>
+  <h1>ROBOT<br>VACUUM <em>R9</em></h1>
+  <div class="sub">Maps your home in one run</div>
+
+  <div class="spec s1"><div class="dot"></div><div class="t"><b>5,000 Pa</b><span>SUCTION POWER</span></div></div>
+  <div class="spec s2"><div class="dot"></div><div class="t"><b>180 min</b><span>RUNTIME PER CHARGE</span></div></div>
+  <div class="spec s3"><div class="dot"></div><div class="t"><b>2.8 in</b><span>SLIM ENOUGH FOR SOFAS</span></div></div>
+  <div class="spec s4"><div class="dot"></div><div class="t"><b>Mop + Vac</b><span>ONE PASS, BOTH JOBS</span></div></div>
+
+  <svg class="bot" width="620" height="360" viewBox="0 0 620 360" fill="none">
+    <defs>
+      <radialGradient id="top" cx=".36" cy=".22" r=".9">
+        <stop offset="0" stop-color="#4C555F"/><stop offset=".55" stop-color="#242B33"/><stop offset="1" stop-color="#12161C"/>
+      </radialGradient>
+      <linearGradient id="side" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1B2128"/><stop offset="1" stop-color="#0B0E12"/>
+      </linearGradient>
+      <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFB27A"/><stop offset="1" stop-color="#FF7A18"/>
+      </linearGradient>
+      <filter id="s2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+    </defs>
+
+    <ellipse cx="310" cy="322" rx="252" ry="34" fill="#0B0E12" opacity=".32" filter="url(#s2)"/>
+
+    <path d="M58 236 a252 96 0 0 0 504 0 v-34 h-504 Z" fill="url(#side)"/>
+    <ellipse cx="310" cy="202" rx="252" ry="96" fill="url(#top)"/>
+    <ellipse cx="310" cy="202" rx="252" ry="96" fill="none" stroke="#5A646F" stroke-width="2" opacity=".7"/>
+
+    <path d="M58 202 a252 96 0 0 1 504 0" fill="none" stroke="#79838F" stroke-width="3" opacity=".5"/>
+    <path d="M120 168 a196 74 0 0 0 380 0" fill="none" stroke="#3A424C" stroke-width="2"/>
+
+    <ellipse cx="310" cy="150" rx="66" ry="26" fill="#161B21"/>
+    <ellipse cx="310" cy="140" rx="66" ry="26" fill="#2B333C"/>
+    <ellipse cx="310" cy="138" rx="46" ry="17" fill="#0E1216"/>
+    <ellipse cx="310" cy="136" rx="46" ry="17" fill="url(#glass)" opacity=".85"/>
+    <ellipse cx="296" cy="132" rx="16" ry="6" fill="#fff" opacity=".45"/>
+
+    <ellipse cx="228" cy="222" rx="34" ry="13" fill="#0E1216"/>
+    <ellipse cx="228" cy="220" rx="34" ry="13" fill="#39424C"/>
+    <ellipse cx="392" cy="222" rx="34" ry="13" fill="#0E1216"/>
+    <ellipse cx="392" cy="220" rx="34" ry="13" fill="#39424C"/>
+
+    <path d="M78 244 a248 92 0 0 0 464 0" fill="none" stroke="#FF7A18" stroke-width="5" opacity=".9" stroke-linecap="round"/>
+
+    <g opacity=".9">
+      <ellipse cx="112" cy="270" rx="42" ry="15" fill="#111519"/>
+      <g stroke="#E7E9EE" stroke-width="5" stroke-linecap="round" opacity=".85">
+        <path d="M112 270 L58 258"/><path d="M112 270 L70 288"/><path d="M112 270 L154 282"/>
+        <path d="M112 270 L150 256"/><path d="M112 270 L104 292"/>
+      </g>
+      <circle cx="112" cy="270" r="10" fill="#FF7A18"/>
+    </g>
+  </svg>
+
+  <div class="strip">
+    <div>APP · ALEXA · GOOGLE HOME</div>
+    <div class="o">2-YEAR WARRANTY</div>
+  </div>
+</div>
+</body></html>
